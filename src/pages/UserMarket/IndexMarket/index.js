@@ -11,8 +11,6 @@ function IndexMarket() {
 
       const response = await api.get(`/market/${id}`);
 
-      console.log(response);
-
       setMarket(response.data);
     }
 
@@ -27,6 +25,8 @@ function IndexMarket() {
         <div className="info">
         <br/>
         <strong>Nome: </strong><label htmlFor="">{market.name}</label>
+        <br/>
+        <strong>Email: </strong><label htmlFor="">{market.email}</label>
         <br/>
         <strong>ID: </strong><label htmlFor="">{market.id}</label>
         <br/>

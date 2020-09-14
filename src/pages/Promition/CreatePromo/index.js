@@ -3,22 +3,24 @@ import { Form, Input, Textarea } from '@rocketseat/unform';
 import api from '../../../services/api';
 
 function CreatePromo({history}) {
-  const [promo, setPromo] = useState({});
-
   async function handleSubimit(data) {
+    try {
+      const id = localStorage.getItem('id_mercado');
 
-    const id = localStorage.getItem('id_mercado');
+      const response = await api.post(`/newPromotion/${id}`, {
+        product: data.product,
+        value: data.value,
+        quantity: data.quantity,
+        description: data.description
+      });
 
-    const response = await api.post(`/newPromotion/${id}`, {
-      product: data.product,
-      value: data.value,
-      quantity: data.quantity,
-      description: data.description
-    });
+      console.log(response);
 
-    setPromo(response.data);
-
-    history.push('/visualizarPromocao');
+      history.push('/visualizarPromocao');
+    } catch (error) {
+      alert(error.response.data.error);
+      
+    }
   }
 
   return (
@@ -40,18 +42,6 @@ function CreatePromo({history}) {
         
         <button type="submit">Criar produto</button>
       </Form>
-      <div className="info">
-          <br/>
-          <strong>ID: </strong><label htmlFor="">{promo._id}</label>
-          <br/>
-          <strong>Nome: </strong><label htmlFor="">{promo.product}</label>
-          <br/>
-          <strong>Valor: </strong><label htmlFor="">{promo.value}</label>
-          <br/>
-          <strong>Quantidade: </strong><label htmlFor="">{promo.quantity}</label>
-          <br/>
-          <strong>Descrição: </strong><label htmlFor="">{promo.description}</label>
-      </div>
     </>
   );
 }

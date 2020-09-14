@@ -35,6 +35,8 @@ function IndexPromo({history}) {
         <strong>Descrição: </strong><label htmlFor="">{p.description}</label>
         <br/>
         <strong>ID mercado: </strong><label htmlFor="">{p.marketID}</label>
+        <br/>
+        <strong>Nome mercado: </strong><label htmlFor="">{p.marketName}</label>
         <hr/>
     </div>       
       ))}

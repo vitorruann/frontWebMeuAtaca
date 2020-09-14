@@ -24,6 +24,7 @@ function UpdateMarket({history}) {
 
       const response = await api.put(`/updateMarket/${id}`, {
         name: data.name,
+        email: data.email,
         cnpj: data.cnpj,
         password: data.password,
         confirmPassword: data.confirmPassword,
@@ -44,6 +45,8 @@ function UpdateMarket({history}) {
       <Form initialData={market} onSubmit={handleSubimit}>
         <label htmlFor="name">Nome do mercado: </label>
         <Input name="name" id="name" placeholder="Digite o nome do mercado"/>
+        <label htmlFor="email">Email do mercado: </label>
+        <Input name="email" id="email" placeholder="Digite o email do mercado"/>
         <label htmlFor="cnpj">CNPJ do mercado: </label>
         <Input name="cnpj" id="cnpj" placeholder="Digite o cnpj do mercado"/>
         <label htmlFor="password">Senha Atual: </label>
@@ -54,14 +57,6 @@ function UpdateMarket({history}) {
         <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirme a senha antiga do mercado"/>
         <button type="submit">Atualizar</button>
       </Form>
-      <div className="info">
-          <br/>
-          <strong>ID: </strong><label htmlFor="">{market.id}</label>
-          <br/>
-          <strong>Nome: </strong><label htmlFor="">{market.name}</label>
-          <br/>
-          <strong>CNPJ: </strong><label htmlFor="">{market.cnpj}</label>
-      </div>
     </>
   );
 }

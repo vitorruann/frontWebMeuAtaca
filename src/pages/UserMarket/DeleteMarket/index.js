@@ -6,6 +6,7 @@ function DeleteMarket({history}) {
   const [market, setMarket] = useState({
     id: "ID inicial",
     name: "Nome inicial",
+    email: "Email inicial",
     cnpj: "CNPJ inicial"
   });
 
@@ -48,6 +49,8 @@ function DeleteMarket({history}) {
           <strong>ID: </strong><label htmlFor="">{market.id}</label>
           <br/>
           <strong>Nome: </strong><label htmlFor="">{market.name}</label>
+          <br/>
+          <strong>Email: </strong><label htmlFor="">{market.email}</label>
           <br/>
           <strong>CNPJ: </strong><label htmlFor="">{market.cnpj}</label>
       </div>

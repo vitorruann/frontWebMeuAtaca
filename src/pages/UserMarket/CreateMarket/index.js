@@ -9,6 +9,7 @@ function CreateMarket({history}) {
     try {
       await api.post('/newMarket', {
         name: data.name,
+        email: data.email,
         cnpj: data.cnpj,
         password: data.password
       });
@@ -28,6 +29,8 @@ function CreateMarket({history}) {
       <Form onSubmit={handleSubimit}>
         <label htmlFor="name">Nome do mercado: </label>
         <Input name="name" id="name" placeholder="Digite o nome do mercado"/>
+        <label htmlFor="email">Email do mercado: </label>
+        <Input name="email" id="email" placeholder="Digite o email do mercado"/>
         <label htmlFor="cnpj">CNPJ do mercado: </label>
         <Input name="cnpj" id="cnpj" placeholder="Digite o cnpj do mercado"/>
         <label htmlFor="password">Senha do mercado: </label>
