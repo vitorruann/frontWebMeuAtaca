@@ -3,8 +3,6 @@ import { Form, Input } from '@rocketseat/unform';
 import api from '../../../services/api';
 
 function CreateMarket({history}) {
-  
-
   async function handleSubimit(data) {
     try {
       await api.post('/newMarket', {
@@ -18,10 +16,7 @@ function CreateMarket({history}) {
     } catch (error) {
       alert(error.response.data.error);
     }
-
-    
   }
-
   return (
     <>
       <h1>Criar Mercado</h1>

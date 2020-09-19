@@ -16,7 +16,6 @@ function CreateUser({history}) {
     } catch (error) {
       alert(error.response.data.error);
     }
-    
   }
 
   return (

@@ -14,8 +14,6 @@ function CreatePromo({history}) {
         description: data.description
       });
 
-      console.log(response);
-
       history.push('/visualizarPromocao');
     } catch (error) {
       alert(error.response.data.error);

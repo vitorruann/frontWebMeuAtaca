@@ -12,7 +12,7 @@ function LoginMarket({history}) {
         password: data.password
       });
   
-      await localStorage.setItem('id_mercado', response.data.id);
+      localStorage.setItem('id_mercado', response.data.id);
   
       history.push('/visualizarPromocao');
     } catch (error) {
